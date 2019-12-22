@@ -8,11 +8,11 @@ import Home from "./core/Home";
 const Routes = () => {
   return (
     <BrowserRouter>
-      <switch>
+      <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/signin" exact component={Signin} />
         <Route path="/signup" exact component={Signup} />
-      </switch>
+      </Switch>
     </BrowserRouter>
   );
 };
