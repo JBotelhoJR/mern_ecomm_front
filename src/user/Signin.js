@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import Layout from "../core/Layout";
-import { signin, authenticate, isAuthenticated } from "../auth";
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import Layout from '../core/Layout';
+import { signin, authenticate, isAuthenticated } from '../auth';
 
 const Signin = () => {
   // state
   const [values, setValues] = useState({
-    email: "Botelho1@outlook.com",
-    password: "password1",
-    error: "",
+    email: 'Botelho1@outlook.com',
+    password: 'password1',
+    error: '',
     loading: false,
     redirectToReferrer: false
   });
@@ -43,21 +43,11 @@ const Signin = () => {
     <form>
       <div className="form-group">
         <label className="text-muted">Email</label>
-        <input
-          onChange={handleChange("email")}
-          type="email"
-          className="form-control"
-          value={email}
-        />
+        <input onChange={handleChange('email')} type="email" className="form-control" value={email} />
       </div>
       <div className="form-group">
         <label className="text-muted">Password</label>
-        <input
-          onChange={handleChange("password")}
-          type="password"
-          className="form-control"
-          value={password}
-        />
+        <input onChange={handleChange('password')} type="password" className="form-control" value={password} />
       </div>
       <button onClick={clickSubmit} className="btn btn-primary">
         Submit
@@ -66,10 +56,7 @@ const Signin = () => {
   );
 
   const showError = () => (
-    <div
-      className="alter alert-danger"
-      style={{ display: error ? "" : "none" }}
-    >
+    <div className="alter alert-danger" style={{ display: error ? '' : 'none' }}>
       {error}
     </div>
   );
@@ -94,11 +81,7 @@ const Signin = () => {
   };
 
   return (
-    <Layout
-      className="container col-md-8 offset-md-2"
-      title="Sign In"
-      description="Sign In to Node React E-commerce App"
-    >
+    <Layout className="container col-md-8 offset-md-2" title="Sign In" description="Sign In to Node React E-commerce App">
       {showLoading()}
       {showError()}
       {signUpForm()}
